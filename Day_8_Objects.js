@@ -362,4 +362,3 @@ likeP(2,'ae9823')
 console.log(products[0].likes)
 console.log(products[1].likes)
 console.log(products[2].likes)
-
