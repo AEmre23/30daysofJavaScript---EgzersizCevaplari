@@ -12,7 +12,7 @@ dog.legs=4
 dog.color='kara'
 dog.age=10
 dog.bark = function () {
-    let x='woof woof'
+    let x='HAV HAV'
     return x }
 
 dog.getDogInfo= function(){
