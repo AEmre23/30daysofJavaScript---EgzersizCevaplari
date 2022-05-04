@@ -144,12 +144,14 @@ const txt = `{
 `
 const obje= JSON.parse(txt,undefined,4)
 const son= Object.values(obje)
+let sonuc=Object.keys(obje)
 
 let dizi=[]
 const say= son.map((x) => dizi.push(x.skills.length))
 const ençok= Math.max(...dizi)
 const yeri = dizi.indexOf(ençok)
-console.log(`Dizide en yetenekli kişi: ${son[yeri].email}`)
+//console.log(`Dizide en yetenekli kişi: ${son[yeri].email}`)
+console.log(`Dizide en yetenekli kişi: ${sonuc[yeri]}`)
 
 
 
