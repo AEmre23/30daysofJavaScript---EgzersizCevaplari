@@ -1,0 +1,66 @@
+//Egzersiz Level1 - 1
+/*  Store you first name, last name, age, country, city in your browser localStorage. */
+
+localStorage.setItem('isim','Emre')
+localStorage.setItem('soyisim','ALTUNKAYA')
+localStorage.setItem('yaş','24')
+localStorage.setItem('ülke','Türkiye')
+localStorage.setItem('şehir','Elazığ')
+localStorage
+
+//Egzersiz Level2 - 1
+/*  Create a student object. The student object will have first name, last name, age, skills, country, enrolled keys and values for the keys.
+ Store the student object in your browser localStorage. */
+
+ const öğrenci = {
+    isim: 'Emre',
+    soyisim: 'Altunkaya',
+    yaş: 24,
+    yetenekler: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'MatLAB',
+        ],
+    ülke:'Türkiye'
+}
+
+const xxxx = JSON.stringify(öğrenci,undefined)
+localStorage.setItem('öğrenci',xxxx)
+localStorage
+
+
+//Egzersiz Level3 - 1
+/*  Create an object called personAccount.
+ It has firstname, lastname, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance methods.
+  Incomes is a set of incomes and its description and expenses is also a set of expenses and its description. */
+
+  const Hesap = {
+    firstName: 'Emre',
+    lastName: 'ALTUNKAYA',
+    incomes: 0,
+    expenses:230,
+    totalIncome: function() {
+        return `${this.incomes}`-`${this.expenses}`
+    },
+    totalExpense: function() {
+        return `${this.expenses}`-`${this.incomes}`
+    },
+    accountInfo: function() {
+        return 'Hesap sahibinin ismi: '+ (`${this.firstName}`+' '+`${this.lastName}`)+', Toplam geliri ise:'+`${this.totalIncome()}`
+    },
+    addIncome: function(x) {
+        this.incomes= this.incomes + x
+        return 'Hesaba '+`${x}`+'₺ kadar para girişi olmuştur!!'
+    },
+    addExpense: function(y) {
+        this.expenses= this.expenses + y
+        return 'Hesaptan '+`${y}`+'₺ kadar para çekilmiştir.'
+    }
+}
+
+const hesapX = JSON.stringify(Hesap,undefined)
+
+localStorage.setItem('hesap',hesapX)
+localStorage
+//Aynı egzersizi 3.kez yaptırışı :/
