@@ -15,7 +15,7 @@ fetch(countriesAPI)
     console.log(a.population)
     console.log(a.area) })
 })
-.catch(hata => console.error(hata))
+.catch(hata => console.error(hata)) 
 
 //Egzersiz Level2 - 1
 /*  Print out all the cat names in to catNames variable. */
@@ -66,7 +66,29 @@ bilgial()
 
 //Egzersiz Level3 - 2
 /*  Read the countries api and find out the 10 largest countries */
+const countriesAPI = 'https://restcountries.com/v2/all'
+fetch(countriesAPI)
+.then(cevap => cevap.json())
+.then(data => {
+    const veri = data
+    //console.log(typeof(data)) //Çektiğimiz "data" değişkeninin türünün obje olduğundan emin olmak için.
 
+    const veribilgi= Object.values(veri)
+    const alan = veribilgi.map((x)=> x.area)
+    const son = alan.sort((a,b) => b-a    )
+        //console.log(son) 
+    const alan10= son[9]
+
+    const filtre = veribilgi.filter((c)=> c.area >= alan10)
+        //console.log(filtre)
+    const sorrt= filtre.sort((d,e)=> e.area - d.area)
+        //console.log(sorrt)
+    console.log('Ülke İsmi\tAlan')
+    for (const {name,area} of sorrt) {
+        console.log(name,area) }
+  
+})
+.catch(hata => console.error(hata))
 
 //Egzersiz Level3 - 3
 /*  Read the countries api and count total number of languages in the world used as officials. */
