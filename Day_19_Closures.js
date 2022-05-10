@@ -53,3 +53,37 @@ Sebebini maalesef anlayamadım.*/
 It has totalIncome, totalExpense, accountInfo,addIncome, addExpense and accountBalance inner functions.
 Incomes is a set of incomes and its description and expenses is also a set of expenses and its description. */
 
+let x= prompt('Adnızı Giriniz'), y=prompt('Soyadınızı Giriniz'), a= prompt('Gelirinizi giriniz'), b=prompt('Giderinizi giriniz')
+function KişiselHesapOluştur () {
+    /*let x = 'Emre'
+    let y= 'ALTUNKAYA' */
+    let gelir=0, gider=0
+    parseInt(a); parseInt(b)
+    
+    function gelirekle(a) {
+        gelir += a
+        return `Gelirinize ${a} kadar ekleme yapıldı.`
+    }
+    function giderekle(b) {
+        gider += b
+        return `Giderinize ${b} kadar ekleme yapıldı.`
+    }
+    function toplamGelir() {
+        return `Toplam Geliriniz: ${gelir-gider}`
+    }
+    function hesapBilgisiAl() {
+        return `${x} ${y} isimli hesabın toplam geliri: ${gelir-gider} `
+    }
+    return {
+        gelirekle:gelirekle(a),
+        giderekle:giderekle(b),
+        toplamGelir:toplamGelir(),
+        hesapBilgisiAl:hesapBilgisiAl()
+    }
+}
+const HesapOluştur = KişiselHesapOluştur ()
+
+console.log(HesapOluştur.gelirekle)
+console.log(HesapOluştur.giderekle)
+console.log(HesapOluştur.toplamGelir)
+console.log(HesapOluştur.hesapBilgisiAl)
